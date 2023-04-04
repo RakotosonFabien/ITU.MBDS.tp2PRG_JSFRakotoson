@@ -1,19 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:metadata>
+        <f:viewParam name="nb" value="#{bean2.nombre}"/>
+    </f:metadata>
     <h:head>
-        <title>Application&gt;formulaire_3</title>
+        <title>Application&gt;formulaire_4</title>
     </h:head>
-    <h:body>
+    <body>
 
-     <h1>Applicationformulaire_3</h1>
+        <ui:composition template="./WEB-INF/templates/template_default.xhtml">
+            <ui:param name="titre" value="Exercice 3"/>
 
-     <h:form>
-        <h:outputLabel value="Entrez un nombre" for="nombre"/>
-        <h:inputText id="nombre" value="#{bean.nombre}"/>
-        <h:commandButton value="Valider" action="#{bean.afficher()}"/>
-      </h:form>
-    </h:body>
+            <ui:define name="content">
+                <h1>Applicationformulaire_3</h1>
+
+                <h:form>
+                   <h:outputLabel value="Entrez un nombre" for="nombre"/>
+                   <h:inputText id="nombre" value="#{bean.nombre}"/>
+                   <h:commandButton value="Valider" action="#{bean.afficher()}"/>
+                 </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
 </html>
